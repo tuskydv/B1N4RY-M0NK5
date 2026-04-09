@@ -49,10 +49,6 @@ pnpm build
 - `src/styles/` - Stylesheet definitions
 - `public/` - Static assets
 
-## 🎨 Design
-
-This project is based on the [Figma design](https://www.figma.com/design/oyYfLhL7TnkrbyGpVwCKxU/Design-CTF-Team-Banner).
-
 ## 📦 Tech Stack
 
 - **Frontend Framework** - React 18
