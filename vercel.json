@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm install && pnpm build",
-  "installCommand": "pnpm install",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "outputDirectory": "dist",
   "env": {
     "NODE_VERSION": "18.20.8"
