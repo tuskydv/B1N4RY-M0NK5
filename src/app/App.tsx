@@ -180,14 +180,14 @@ export default function App() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute bottom-8 left-8 md:bottom-12 md:left-16 z-10 flex items-end gap-4"
+        className="absolute bottom-4 left-4 md:bottom-12 md:left-16 z-10 flex flex-col md:flex-row md:items-end gap-2 md:gap-4"
       >
         <a
           href="https://forms.gle/Cfe4s8UEx6GUc2nW9"
           onClick={handleJoinClick}
-          className="block border-2 border-white px-6 py-3 font-mono text-white text-[clamp(0.75rem,1vw,0.9rem)] hover:bg-white hover:text-black transition-all duration-300 tracking-tight cursor-pointer"
+          className="block border-2 border-white px-3 md:px-6 py-2 md:py-3 font-mono text-white text-[clamp(0.65rem,2vw,0.9rem)] hover:bg-white hover:text-black transition-all duration-300 tracking-tight cursor-pointer whitespace-nowrap"
         >
-          Join Recruitment CTF
+          Join CTF
         </a>
 
         <motion.button
@@ -195,7 +195,7 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
           onClick={() => setShowAbout(true)}
-          className="block border-2 border-white px-6 py-3 font-mono text-white text-[clamp(0.75rem,1vw,0.9rem)] hover:bg-white hover:text-black transition-all duration-300 tracking-tight cursor-pointer"
+          className="block border-2 border-white px-3 md:px-6 py-2 md:py-3 font-mono text-white text-[clamp(0.65rem,2vw,0.9rem)] hover:bg-white hover:text-black transition-all duration-300 tracking-tight cursor-pointer"
         >
           About
         </motion.button>
@@ -206,29 +206,29 @@ export default function App() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute bottom-8 right-8 md:bottom-12 md:right-16 z-10 text-white font-mono text-left"
+        className="absolute bottom-4 right-4 md:bottom-12 md:right-16 z-10 text-white font-mono text-left hidden sm:block"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="text-[clamp(0.75rem,1.1vw,0.95rem)] mb-2"
+          className="text-[clamp(0.65rem,1.1vw,0.85rem)] mb-1"
         >
           while alive:
         </motion.div>
         {[
-          { func: "meditate()", indent: "    " },
-          { func: "crack()", indent: "    " },
-          { func: "leave_no_trace()", indent: "    " }
+          { func: "meditate()", indent: "" },
+          { func: "crack()", indent: "" },
+          { func: "leave_no_trace()", indent: "" }
         ].map((item, i) => (
           <motion.div
             key={item.func}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 + i * 0.15 }}
-            className="text-[clamp(0.75rem,1.1vw,0.95rem)]"
+            className="text-[clamp(0.65rem,1.1vw,0.85rem)]"
           >
-            {item.indent}{item.func}
+            {item.func}
           </motion.div>
         ))}
       </motion.div>
