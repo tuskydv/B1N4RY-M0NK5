@@ -19,8 +19,6 @@ const teamNames = [
   "B1N4RY\nM0NK5",
   "N1RV4N4",
   "R00T_M0NK",
-  "SH4D0W",
-  "S1L3NT_0N3",
   "V01D_S4GE",
   "3V1L\nM0NK5",
   "3V1L_M0NK5",
