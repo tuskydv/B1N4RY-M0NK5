@@ -199,6 +199,38 @@ export default function App() {
         </motion.button>
       </motion.div>
 
+      {/* Bottom right - Function calls */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="absolute bottom-8 right-8 md:bottom-12 md:right-16 z-10 text-white font-mono text-left"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="text-[clamp(0.75rem,1.1vw,0.95rem)] mb-2"
+        >
+          while alive:
+        </motion.div>
+        {[
+          { func: "meditate()", indent: "    " },
+          { func: "crack()", indent: "    " },
+          { func: "leave_no_trace()", indent: "    " }
+        ].map((item, i) => (
+          <motion.div
+            key={item.func}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 + i * 0.15 }}
+            className="text-[clamp(0.75rem,1.1vw,0.95rem)]"
+          >
+            {item.indent}{item.func}
+          </motion.div>
+        ))}
+      </motion.div>
+
       {/* Scanline effect */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
