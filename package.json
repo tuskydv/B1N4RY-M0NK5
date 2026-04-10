@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "packageManager": "pnpm@8.15.0",
   "scripts": {
-    "preinstall": "corepack prepare npm@9.8.1 --activate",
     "build": "vite build",
     "dev": "vite"
   },
