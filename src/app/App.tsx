@@ -42,24 +42,26 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.code === "Space") {
-        e.preventDefault();
-        setNameGlitch(true);
+    const interval = setInterval(() => {
+      setNameGlitch(true);
 
-        setTimeout(() => {
-          setNameIndex((prev) => (prev + 1) % teamNames.length);
-        }, 150);
+      setTimeout(() => {
+        // Pick random team name different from current
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * teamNames.length);
+        } while (randomIndex === nameIndex);
+        
+        setNameIndex(randomIndex);
+      }, 150);
 
-        setTimeout(() => {
-          setNameGlitch(false);
-        }, 300);
-      }
-    };
+      setTimeout(() => {
+        setNameGlitch(false);
+      }, 300);
+    }, 3000);
 
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-  }, []);
+    return () => clearInterval(interval);
+  }, [nameIndex]);
 
   const handleJoinClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
