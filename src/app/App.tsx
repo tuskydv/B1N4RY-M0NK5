@@ -187,7 +187,7 @@ export default function App() {
           onClick={handleJoinClick}
           className="block border-2 border-white px-3 md:px-6 py-2 md:py-3 font-mono text-white text-[clamp(0.65rem,2vw,0.9rem)] hover:bg-white hover:text-black transition-all duration-300 tracking-tight cursor-pointer whitespace-nowrap"
         >
-          Join CTF
+          Join Recruitment CTF
         </a>
 
         <motion.button
@@ -206,7 +206,7 @@ export default function App() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute bottom-4 right-4 md:bottom-12 md:right-16 z-10 text-white font-mono text-left hidden sm:block"
+        className="absolute bottom-4 right-4 md:bottom-12 md:right-16 z-10 text-white font-mono text-left"
       >
         <motion.div
           initial={{ opacity: 0 }}
