@@ -6,3 +6,26 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Mobile optimization headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-UA-Compatible = "IE=edge"
+    Viewport = "width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache optimization for mobile
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML cache control for fast updates
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
