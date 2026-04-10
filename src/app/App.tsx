@@ -23,6 +23,7 @@ const teamNames = [
   "S1L3NT_0N3",
   "V01D_S4GE",
   "3V1L\nM0NK5",
+  "3V1L_M0NK5",
 ];
 
 export default function App() {
