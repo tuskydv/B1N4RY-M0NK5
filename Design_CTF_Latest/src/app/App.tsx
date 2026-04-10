@@ -172,7 +172,6 @@ export default function App() {
         </a>
       </motion.div>
 
-
       {/* Bottom left - Join button and About button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -198,14 +197,6 @@ export default function App() {
           About
         </motion.button>
       </motion.div>
-
-      {/* Scanline effect */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.02]"
-        style={{
-          background: "repeating-linear-gradient(0deg, transparent, transparent 2px, white 2px, white 4px)",
-        }}
-      />
 
       {/* Redirecting Overlay */}
       {isRedirecting && (
@@ -357,32 +348,35 @@ export default function App() {
                     </p>
                   </div>
 
-                  {/* Recruitment CTF */}
+                  {/* Philosophy */}
                   <div className="border-l-2 border-white pl-4">
                     <h3 className="text-white text-[clamp(1rem,1.5vw,1.2rem)] font-bold mb-2 font-mono">
-                      RECRUITMENT CTF
+                      PHILOSOPHY
                     </h3>
-                    <p className="text-white/70 text-[clamp(0.85rem,1vw,0.95rem)] font-mono leading-relaxed">
-                      Aspiring hackers interested in joining our team can participate in our recruitment CTF.
-                      Show your skills and join us on the path to mastery.
-                    </p>
+                    <div className="text-white/70 text-[clamp(0.85rem,1vw,0.95rem)] font-mono leading-relaxed space-y-2">
+                      <p>while alive:</p>
+                      <p className="pl-4">meditate() - Study and reflect</p>
+                      <p className="pl-4">crack() - Break and exploit</p>
+                      <p className="pl-4">leave_no_trace() - Operate with stealth</p>
+                    </div>
                   </div>
 
-                  {/* Contact and Social */}
-                  <div className="border-l-2 border-white pl-4 mt-8 pt-8">
-                    <h3 className="text-white text-[clamp(1rem,1.5vw,1.2rem)] font-bold mb-4 font-mono">
-                      CONNECT
+                  {/* Join */}
+                  <div className="border-l-2 border-white pl-4">
+                    <h3 className="text-white text-[clamp(1rem,1.5vw,1.2rem)] font-bold mb-2 font-mono">
+                      JOIN US
                     </h3>
-                    <div className="flex gap-4">
-                      <a
-                        href="https://ctftime.org/team/431734"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/70 hover:text-white transition-colors text-[clamp(0.85rem,1vw,0.95rem)] font-mono"
-                      >
-                        CTFtime
-                      </a>
-                    </div>
+                    <p className="text-white/70 text-[clamp(0.85rem,1vw,0.95rem)] font-mono leading-relaxed mb-4">
+                      Ready to join the monastery? Test your skills in our recruitment CTF.
+                    </p>
+                    <a
+                      href="https://forms.gle/Cfe4s8UEx6GUc2nW9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block border-2 border-white px-6 py-3 font-mono text-white text-[clamp(0.75rem,1vw,0.9rem)] hover:bg-white hover:text-black transition-all duration-300 tracking-tight"
+                    >
+                      Join Recruitment CTF
+                    </a>
                   </div>
                 </motion.div>
               </div>
@@ -390,6 +384,47 @@ export default function App() {
           </>
         )}
       </AnimatePresence>
+
+
+      {/* Bottom right - Function calls */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="absolute bottom-8 right-8 md:bottom-12 md:right-16 z-10 text-white font-mono text-left"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="text-[clamp(0.75rem,1.1vw,0.95rem)] mb-2"
+        >
+          while alive:
+        </motion.div>
+        {[
+          { func: "meditate()", indent: "    " },
+          { func: "crack()", indent: "    " },
+          { func: "leave_no_trace()", indent: "    " }
+        ].map((item, i) => (
+          <motion.div
+            key={item.func}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 + i * 0.15 }}
+            className="text-[clamp(0.75rem,1.1vw,0.95rem)]"
+          >
+            {item.indent}{item.func}
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Scanline effect */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.02]"
+        style={{
+          background: "repeating-linear-gradient(0deg, transparent, transparent 2px, white 2px, white 4px)",
+        }}
+      />
     </div>
   );
 }
